@@ -1,0 +1,36 @@
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>STUDENT MARK</h2>
+<h4 id="head1"></h4>
+<table>
+    <tr>
+        <th>Tamil</th>
+        <td><input type="text" id="s1"/></td>
+    </tr>
+    <tr>
+        <th>English</th>
+        <td><input type="text" id="s2" /></td>
+    </tr>
+    <tr>
+        <th>Maths</th>
+        <td><input type="text" id="s3" /></td>
+    </tr>
+</table>
+<button onclick="actionGo()">CALCULATE</button>
+<script>
+    function actionGo()
+    {
+        var a = document.getElementById("s1").value;
+        var b = document.getElementById("s2").value;
+        var c = document.getElementById("s3").value;
+        var result = parseFloat(a) + parseFloat(b) + parseFloat(c);
+        if(!isNaN(result))
+        {
+            document.getElementById("head1").innerHTML = "TOTAL " + result;
+        }
+    }
+</script>
+

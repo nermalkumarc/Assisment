@@ -1,0 +1,13 @@
+using MidnightSample.Models; 
+public ActionResult Check(MidnightSample.Models.MidnightTable tobj)
+        {
+            using (MidnightDBEntities dobj = new MidnightDBEntities())
+            {
+                var user = dobj.MidnightTables.Where(x => x.Username == tobj.Username && x.Userpassword == tobj.Userpassword).FirstOrDefault();
+                if(user != null)
+                {
+                    return RedirectToAction("Index", "Default");
+                }
+            }
+                return View();
+        }
